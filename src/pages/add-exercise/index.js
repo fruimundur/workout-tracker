@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import styles from '@/styles/AddExercise.module.css'
+import Link from 'next/link';
 
 
 const apiKey = '1085|63aB9dCkx5xscui2Q6J32677rVKW0IbZXfWse7a2';
 const apiUrl = `https://zylalabs.com/api/392/exercise+database+api/313/list+of+all+exercise`;
+
 
 export async function getStaticProps() {
     const response = await fetch(apiUrl, {
@@ -19,11 +21,11 @@ export async function getStaticProps() {
 }
 
 
-export default function MyComponent({ data }) {
+export default function AddExercise({ data }) {
   const [searchQuery, setSearchQuery] = useState('');
 
 // Extracting all of the values of the 'data' object and returning them as an array, 
-// so we can apply the filter method to only get the name of the exercises
+// so the filter method can be utilised to match the name property of the exercises with the user's search query
   const filteredData = Object.values(data).filter((item) =>
     item.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -42,7 +44,7 @@ export default function MyComponent({ data }) {
       {searchQuery !== '' && (
         <ul>
           {filteredData.map((item) => (
-            <li key={item.id}>{item.name}</li>
+            <Link key={item.id} href="/id" as={`/${item.id}`}><li>{item.name}</li></Link>
           ))}
         </ul>
       )}
@@ -50,3 +52,4 @@ export default function MyComponent({ data }) {
     </div>
   );
 }
+

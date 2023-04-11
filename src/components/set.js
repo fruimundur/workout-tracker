@@ -34,9 +34,9 @@ export default function Set({ data }) {
 
     return (
         <>
-        {Object.values(data).map((item) => (
+        {/* {Object.values(data).map((item) => (
             <h1 key={item.id}>{item.name}</h1>
-        ))}
+        ))} */}
         <table className={styles.table}>
             <tbody>
                 <tr>

@@ -5,8 +5,10 @@
   background: black;
 }
 
-.navItem {
+.navText {
   color: white;
+  font-size: 20px;
+  margin: 0;
 }
 
 .main {

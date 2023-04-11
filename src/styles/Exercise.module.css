@@ -1,0 +1,30 @@
+.table {
+    border: 2px solid black;
+    border-radius: 4px;
+    border-spacing: 0;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.tableCellSet {
+    border-bottom: 2px solid black;
+}
+
+.tableCellReps {
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.tableCellWeight {
+    border-bottom: 1px solid black;
+}
+
+.input {
+    border: none;
+    text-align: center;
+}
+
+.yo {
+    border-right: 1px solid black;
+}

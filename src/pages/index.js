@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Link from 'next/link';
@@ -17,8 +16,7 @@ export default function Home() {
       </Head>
       <header>
         <nav className={styles.nav}>
-          <Link className={styles.navItem} href="/how-it-works">How it works</Link>
-          <Link className={styles.navItem} href="/resources">Resources</Link>
+          <p className={styles.navText}>hai, im a header</p>
         </nav>
       </header>
       <main className={styles.main}>
