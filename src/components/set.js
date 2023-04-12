@@ -3,44 +3,41 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router';
 
 
-
-export default function Set({ data }) {
+export default function Set({id}) {
     const router = useRouter();
     const [reps, setReps] = useState('')
     const [kilos, setKilos] = useState('')
 
        useEffect(() => {
-            const savedReps = localStorage.getItem(`${router.query.id}-reps`)
+            const savedReps = localStorage.getItem(`${router.query.id}-${id}-reps`)
             if (savedReps) {
                 setReps(savedReps)
             }
-            const savedKilos = localStorage.getItem(`${router.query.id}-kilos`)
+            const savedKilos = localStorage.getItem(`${router.query.id}-${id}-kilos`)
             if (savedKilos) {
                 setKilos(savedKilos)
             }
-       }, [router.query.id])
+       }, [router.query.id, id])
 
     const handleChangeReps = (event) => {
         const value = event.target.value;
         setReps(value);
-        localStorage.setItem(`${router.query.id}-reps`, value);
+        localStorage.setItem(`${router.query.id}-${id}-reps`, value);
       };
 
     const handleChangeKilos = (event) => {
       const value = event.target.value;
       setKilos(value); 
-      localStorage.setItem(`${router.query.id}-kilos`, value);
+      localStorage.setItem(`${router.query.id}-${id}-kilos`, value);
     };
 
     return (
         <>
-        {/* {Object.values(data).map((item) => (
-            <h1 key={item.id}>{item.name}</h1>
-        ))} */}
+
         <table className={styles.table}>
             <tbody>
                 <tr>
-                    <th className={styles.tableCellSet} colSpan={2}>Set 1</th>
+                    <th className={styles.tableCellSet} colSpan={2}>Set</th>
                 </tr>
                 <tr>
                     <td className={styles.tableCellReps}>Reps</td>
