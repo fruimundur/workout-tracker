@@ -30,6 +30,10 @@ export default function AddExercise({ data }) {
     item.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+
+
+
+
   const handleChange = (event) => {
     setSearchQuery(event.target.value);
   };
@@ -37,14 +41,14 @@ export default function AddExercise({ data }) {
   return (
     <div>
       <div className={styles.box}>
-      <h1>Add exercise</h1>
+      <h1 className={styles.headline}>Add exercise</h1>
       <form>
         <input type="text" value={searchQuery} onChange={handleChange} />
       </form>
       {searchQuery !== '' && (
         <ul>
           {filteredData.map((item) => (
-            <Link key={item.id} href="/id" as={`/${item.id}`}><li>{item.name}</li></Link>
+            <Link key={item.id} href={`/${item.id}-${item.name}`}><li>{item.name.toUpperCase()}</li></Link>
           ))}
         </ul>
       )}

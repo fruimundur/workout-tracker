@@ -2,33 +2,11 @@ import styles from '@/styles/Exercise.module.css'
 import Set from '../components/set.js'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router';
+import Link from 'next/link.js';
 
 
 
-const apiKey = '1085|63aB9dCkx5xscui2Q6J32677rVKW0IbZXfWse7a2';
-const apiUrl = `https://zylalabs.com/api/392/exercise+database+api/313/list+of+all+exercise`;
-
-
-export async function getStaticProps() {
-    const response = await fetch(apiUrl, {
-        headers: {
-          Authorization: `Bearer ${apiKey}`,
-        },
-      });
-  const data = await response.json();
-
-  return {
-    props: {data}
-  };
-}
-
-
-export async function getStaticPaths() {
-    const paths = [];
-    return { paths, fallback: true };
-}
-
-export default function ExercisePage({data}) {
+export default function ExercisePage() {
     const router = useRouter();
     const [newSet, setNewSet] = useState([0])
 
@@ -41,27 +19,44 @@ export default function ExercisePage({data}) {
     }, [router.query.id])
 
     useEffect(() => {
-        if (!newSet.length) return
+        if (newSet.length < 2) return
         localStorage.setItem(`${router.query.id}-newSetList`, JSON.stringify(newSet))
     }, [newSet, router.query.id])
-
 
 
     function deleteSet(i) {
         const index = newSet.indexOf(i)
         const arr = [...newSet]
         arr.splice(index, 1)
-        console.log(arr, index)
         setNewSet(arr)
-        localStorage.removeItem(`${router.query.id}-${Set}-reps`)
+        localStorage.removeItem(`${router.query.id}-${i}-reps`)
+        localStorage.removeItem(`${router.query.id}-${i}-kilos`)
     }
 
+    const exerciseName = router.query.id ? router.query.id.slice(router.query.id.lastIndexOf('-') +1) : '';
+    const exerciseID = router.query.id ? router.query.id.split('-')[0] : '';
+
+    const nameAndID = {name: exerciseName, id: exerciseID}
+
+    function saveExercise() {
+        let savedArray = localStorage.getItem("savedArray")
+
+        if (savedArray) {
+            savedArray = JSON.parse(savedArray)
+            savedArray.push(nameAndID)
+            localStorage.setItem("savedArray", JSON.stringify(savedArray))
+        } else {
+            let savedArray = []
+            savedArray.push(nameAndID)
+            localStorage.setItem("savedArray", JSON.stringify(savedArray))
+        }
+    }
 
     return (
         <>
-        {/* {data && Object.values(data).map((item) => (
-        <h1 key={item.id}>{item.name}</h1>
-        ))} */}
+        <h1 className={styles.headline}>{exerciseName}</h1>
+        <button type="button" onClick={() => router.back()}>Go back</button>
+        <Link href={`/gif/${exerciseID}`}><button className={styles.gifButton}>Gif</button></Link>
         {newSet.map(set => (
             <div key={set}>
                 <Set id={set} />
@@ -69,7 +64,7 @@ export default function ExercisePage({data}) {
             </div>
         ))}
         <button onClick={renderNewSet} className={styles.addButton}>+ Add set</button>
-        <button className={styles.saveButton}>Save</button>
+        <Link href="/"><button onClick={saveExercise} className={styles.saveButton}>Save</button></Link>
         </>
     );
 }

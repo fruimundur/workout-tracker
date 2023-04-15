@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Link from 'next/link';
+import ExerciseBox from '../components/exerciseBox.js'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,14 +16,15 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header>
-        <nav className={styles.nav}>
-          <p className={styles.navText}>hai, im a header</p>
+        <nav>
+          <p></p>
         </nav>
       </header>
       <main className={styles.main}>
         <div className={styles.addButton}>
           <Link href="/add-exercise">+ Add exercise</Link>
         </div>
+        <ExerciseBox />
       </main>
       <footer>
       </footer>

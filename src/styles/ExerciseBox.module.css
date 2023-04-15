@@ -1,0 +1,15 @@
+.box {
+    border: 2px solid black;
+    width: 400px;
+    height: 120px;
+    margin: 0 auto;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.name {
+    text-transform: uppercase;
+    text-decoration: none;
+}
