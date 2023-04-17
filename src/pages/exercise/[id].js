@@ -1,9 +1,8 @@
 import styles from '@/styles/Exercise.module.css'
-import Set from '../components/set.js'
+import Set from '../../components/set.js'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router';
 import Link from 'next/link.js';
-
 
 
 export default function ExercisePage() {
@@ -43,6 +42,11 @@ export default function ExercisePage() {
 
         if (savedArray) {
             savedArray = JSON.parse(savedArray)
+            for (let i = 0; i < savedArray.length; i++) {
+                if (nameAndID.id === savedArray[i].id) {
+                    return
+                }
+            }
             savedArray.push(nameAndID)
             localStorage.setItem("savedArray", JSON.stringify(savedArray))
         } else {

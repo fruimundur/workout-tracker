@@ -1,10 +1,12 @@
 import Image from "next/image";
 import { useRouter } from 'next/router';
 
+
 const apiKey = '1085|63aB9dCkx5xscui2Q6J32677rVKW0IbZXfWse7a2';
 const apiUrl = `https://zylalabs.com/api/392/exercise+database+api/313/list+of+all+exercise`;
 
-
+/* fetching data from the API. The data is an array of objects, and each object 
+is an exercise with different properites describing that exercise/object */
 export async function getServerSideProps() {
     const response = await fetch(apiUrl, {
         headers: {
@@ -22,6 +24,10 @@ export async function getServerSideProps() {
 export default function Gif({data}) {
     const router = useRouter();
 
+/* Extracting all of the values of the 'data' object and returning them as an array, so the filter method 
+can be utilised to match the ID of the exercises with the query paramater which in this case includes the ID 
+of the selected exercise. The filteredData variable now holds an array with one single object, which is the 
+specific exercise we want to see the GIF for */
     const filteredData = Object.values(data).filter((item) =>
         item.id===router.query.gif
     );

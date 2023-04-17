@@ -1,4 +1,9 @@
-.box {
+.name {
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.link {
     border: 2px solid black;
     width: 400px;
     height: 120px;
@@ -7,9 +12,4 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.name {
-    text-transform: uppercase;
-    text-decoration: none;
 }
