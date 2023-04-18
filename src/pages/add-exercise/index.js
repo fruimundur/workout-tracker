@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import styles from '@/styles/AddExercise.module.css'
 import Link from 'next/link';
 
 
@@ -37,13 +36,13 @@ can be utilised to match the name property of the exercises with the value of th
 
   return (
     <div>
-      <div className={styles.box}>
-      <h1 className={styles.headline}>Add exercise</h1>
+      <div className="flex flex-col items-center mt-36">
+      <h1 className="text-2xl font-bold text-white mb-7 uppercase">Add exercise</h1>
       <form>
-        <input type="text" value={searchQuery} onChange={handleChange} />
+        <input className="w-96 h-10 rounded-md" type="text" value={searchQuery} placeholder="Search name of exercise" onChange={handleChange} />
       </form>
       {searchQuery !== '' && (
-        <ul>
+        <ul className="bg-white w-96 max-h-96 overflow-scroll rounded-md">
           {filteredData.map((item) => (
             <Link key={item.id} href={`/exercise/${item.id}-${item.name}`}><li>{item.name.toUpperCase()}</li></Link>
           ))}

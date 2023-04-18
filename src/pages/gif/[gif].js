@@ -35,9 +35,8 @@ specific exercise we want to see the GIF for */
     return(
         <>
             <h1>Yoyo!</h1>
-            <button type="button" onClick={() => router.back()}>Go back</button>
             {filteredData.map((item) => (
-                <Image 
+                <Image className="mx-auto my-0 mt-28 rounded-lg"
                 key={item.id} 
                 src={item.gifUrl} 
                 alt="gif"
@@ -45,6 +44,7 @@ specific exercise we want to see the GIF for */
                 height={500} 
                 />
             ))}
+            <button className="w-48 h-14 block mx-auto my-0 bg-white/80 rounded-md font-bold mt-12" type="button" onClick={() => router.back()}>Go back</button>
         </>
 
     )

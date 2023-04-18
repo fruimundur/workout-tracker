@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import styles from '@/styles/ExerciseBox.module.css'
 import Link from 'next/link.js'
 
 
@@ -33,10 +32,10 @@ function deleteExercise(exerciseID) {
             savedArray.map((exerciseID) => (
                 <>
                     <div>
-                        <Link className={styles.link} key={exerciseID} href={`/exercise/${exerciseID.id}-${exerciseID.name}`}>
-                            <p className={styles.name}>{exerciseID.name}</p>
+                        <Link className="w-96 h-24 my-0 mx-auto flex items-center justify-center bg-white/80 rounded-t-lg" key={exerciseID} href={`/exercise/${exerciseID.id}-${exerciseID.name}`}>
+                            <p className="uppercase font-bold">{exerciseID.name}</p>
                         </Link>
-                        <button onClick={() => deleteExercise(exerciseID)} className={styles.deleteButton}>Delete exercise</button>
+                        <button className="w-96 h-9 border-t-2 bg-white/80 mb-10 rounded-b-lg mt-1" onClick={() => deleteExercise(exerciseID)}>Delete exercise</button>
                     </div>
                 </>
             )):null

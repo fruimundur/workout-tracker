@@ -1,4 +1,3 @@
-import styles from '@/styles/Exercise.module.css'
 import Set from '../../components/set.js'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router';
@@ -58,17 +57,17 @@ export default function ExercisePage() {
 
     return (
         <>
-        <h1 className={styles.headline}>{exerciseName}</h1>
-        <button type="button" onClick={() => router.back()}>Go back</button>
-        <Link href={`/gif/${exerciseID}`}><button className={styles.gifButton}>Gif</button></Link>
+        <h1 className="text-center uppercase text-white text-3xl font-bold mt-20">{exerciseName}</h1>
+        {/* <button type="button" onClick={() => router.back()}>Go back</button> */}
+        <Link href={`/gif/${exerciseID}`}><button className="block w-40 h-12 mb-20 mt-8 mx-auto bg-white/80 rounded font-bold">GIF</button></Link>
         {newSet.map(set => (
             <div key={set}>
                 <Set id={set} />
-                {set===0?null: <button onClick={() => deleteSet(set)} className={styles.deleteButton}>Delete set</button>}
+                {set===0?null: <button onClick={() => deleteSet(set)} className="block w-96 mt-1 rounded-b-lg h-8 mx-auto bg-white/80">Delete set</button>}
             </div>
         ))}
-        <button onClick={renderNewSet} className={styles.addButton}>+ Add set</button>
-        <Link href="/"><button onClick={saveExercise} className={styles.saveButton}>Save</button></Link>
+        <button onClick={renderNewSet} className="block w-80 h-12 mt-20 mx-auto bg-white/80 rounded font-bold">+ Add set</button>
+        <Link href="/"><button onClick={saveExercise} className="block w-40 h-12 mt-20 mx-auto bg-white/80 rounded font-bold mb-20">Save</button></Link>
         </>
     );
 }

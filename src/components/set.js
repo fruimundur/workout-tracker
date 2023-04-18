@@ -1,4 +1,3 @@
-import styles from '@/styles/Exercise.module.css'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router';
 
@@ -42,18 +41,18 @@ the state of the 'reps' and 'kilos' variables so that these values are displayed
     return (
         <>
 
-        <table className={styles.table}>
+        <table className="w-96 rounded-t-lg border-solid border-black text-center mx-auto my-0 mt-14 bg-white/80">
             <tbody>
                 <tr>
-                    <th className={styles.tableCellSet} colSpan={2}>Set</th>
+                    <th className="border-b border-b-black" colSpan={2}>Set</th>
                 </tr>
                 <tr>
-                    <td className={styles.tableCellReps}>Reps</td>
-                    <td className={styles.tableCellWeight}>Kilos</td>
+                    <td className="border-r border-b border-black">Reps</td>
+                    <td className="border-b border-black">Kilos</td>
                 </tr>
                 <tr>
-                    <td className={styles.yo}><input className={styles.input} onChange={handleChangeReps} value={reps}></input></td>
-                    <td><input className={styles.input} onChange={handleChangeKilos} value={kilos}></input></td>
+                    <td className="border-r border-black"><input className="border-none text-center w-44 rounded bg-white/0" onChange={handleChangeReps} value={reps}></input></td>
+                    <td><input className="border-none text-center w-44 rounded bg-white/0" onChange={handleChangeKilos} value={kilos}></input></td>
                 </tr>
             </tbody>
         </table>
