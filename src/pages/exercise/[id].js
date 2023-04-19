@@ -59,7 +59,7 @@ export default function ExercisePage() {
         <>
         <h1 className="text-center uppercase text-white text-3xl font-bold mt-20">{exerciseName}</h1>
         {/* <button type="button" onClick={() => router.back()}>Go back</button> */}
-        <Link href={`/gif/${exerciseID}`}><button className="block w-40 h-12 mb-20 mt-8 mx-auto bg-white/80 rounded font-bold">GIF</button></Link>
+        <Link href={`/gif/${exerciseID}`} className="block w-40 h-12 mb-20 mt-8 mx-auto bg-white/80 rounded font-bold text-center justify-center flex"><button>GIF</button></Link>
         {newSet.map(set => (
             <div key={set}>
                 <Set id={set} />
@@ -67,7 +67,7 @@ export default function ExercisePage() {
             </div>
         ))}
         <button onClick={renderNewSet} className="block w-80 h-12 mt-20 mx-auto bg-white/80 rounded font-bold">+ Add set</button>
-        <Link href="/"><button onClick={saveExercise} className="block w-40 h-12 mt-20 mx-auto bg-white/80 rounded font-bold mb-20">Save</button></Link>
+        <Link href="/" className="block w-40 h-12 mt-20 mx-auto bg-white/80 rounded font-bold mb-20 text-center justify-center flex"><button onClick={saveExercise}>Save</button></Link>
         </>
     );
 }

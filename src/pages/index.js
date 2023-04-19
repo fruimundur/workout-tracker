@@ -17,10 +17,10 @@ export default function Home() {
         </nav>
       </header>
       <main className="text-center">
-        <Link href="/add-exercise">
-          <div className="w-96 h-14 my-0 mx-auto mt-40 mb-14 border-t-2 bg-white/80 rounded-md font-bold flex items-center justify-center">
+        <Link className="w-96 h-14 my-0 mx-auto mt-40 mb-14 border-t-2 bg-white/80 rounded-md font-bold flex items-center justify-center" href="/add-exercise">
+          <p>
             + Add exercise
-          </div>
+          </p>
         </Link>
         <ExerciseBox />
       </main>
