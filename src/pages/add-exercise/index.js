@@ -36,13 +36,13 @@ can be utilised to match the name property of the exercises with the value of th
 
   return (
     <div>
-      <div className="flex flex-col items-center mt-36">
+      <div className="flex flex-col items-center mt-16">
       <h1 className="text-2xl font-bold text-white mb-7 uppercase">Add exercise</h1>
       <form>
-        <input className="w-96 h-10 rounded-md" type="text" value={searchQuery} placeholder="Search name of exercise" onChange={handleChange} />
+        <input className="w-80 h-10 rounded-md indent-2" type="text" value={searchQuery} placeholder="Search name of exercise" onChange={handleChange} />
       </form>
       {searchQuery !== '' && (
-        <ul className="bg-white w-96 max-h-96 overflow-scroll rounded-md">
+        <ul className="bg-white w-80 max-h-72 overflow-scroll rounded-md indent-1.5">
           {filteredData.map((item) => (
             <Link key={item.id} href={`/exercise/${item.id}-${item.name}`}><li>{item.name.toUpperCase()}</li></Link>
           ))}

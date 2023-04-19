@@ -36,15 +36,15 @@ specific exercise we want to see the GIF for */
         <>
             <h1>Yoyo!</h1>
             {filteredData.map((item) => (
-                <Image className="mx-auto my-0 mt-28 rounded-lg"
+                <Image className="mx-auto my-0 mt-10 rounded-lg"
                 key={item.id} 
                 src={item.gifUrl} 
                 alt="gif"
-                width={500}
-                height={500} 
+                width={300}
+                height={300} 
                 />
             ))}
-            <button className="w-48 h-14 block mx-auto my-0 bg-white/80 rounded-md font-bold mt-12" type="button" onClick={() => router.back()}>Go back</button>
+            <button className="w-48 h-14 block mx-auto my-0 bg-white/80 hover:bg-white/70 focus:bg-slate-200/60 rounded-md font-bold mt-12 mb-10" type="button" onClick={() => router.back()}>Go back</button>
         </>
 
     )

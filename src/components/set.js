@@ -41,7 +41,7 @@ the state of the 'reps' and 'kilos' variables so that these values are displayed
     return (
         <>
 
-        <table className="w-96 rounded-t-lg border-solid border-black text-center mx-auto my-0 mt-14 bg-white/80">
+        <table className="w-80 rounded-t-lg border-solid border-black text-center mx-auto my-0 mt-14 bg-white/80">
             <tbody>
                 <tr>
                     <th className="border-b border-b-black" colSpan={2}>Set</th>
@@ -51,8 +51,8 @@ the state of the 'reps' and 'kilos' variables so that these values are displayed
                     <td className="border-b border-black">Kilos</td>
                 </tr>
                 <tr>
-                    <td className="border-r border-black"><input className="border-none text-center w-44 rounded bg-white/0" onChange={handleChangeReps} value={reps}></input></td>
-                    <td><input className="border-none text-center w-44 rounded bg-white/0" onChange={handleChangeKilos} value={kilos}></input></td>
+                    <td className="border-r border-black"><input className="border-none text-center w-36 rounded bg-white/0" onChange={handleChangeReps} value={reps}></input></td>
+                    <td><input className="border-none text-center w-36 rounded bg-white/0" onChange={handleChangeKilos} value={kilos}></input></td>
                 </tr>
             </tbody>
         </table>

@@ -32,10 +32,10 @@ function deleteExercise(exerciseID) {
             savedArray.map((exerciseID) => (
                 <>
                     <div>
-                        <Link className="w-96 h-24 my-0 mx-auto flex items-center justify-center bg-white/80 rounded-t-lg" key={exerciseID} href={`/exercise/${exerciseID.id}-${exerciseID.name}`}>
+                        <Link className="w-80 h-24 my-0 mx-auto flex items-center justify-center bg-white/80 hover:bg-white/70 focus:bg-slate-200/60 rounded-t-lg" key={exerciseID} href={`/exercise/${exerciseID.id}-${exerciseID.name}`}>
                             <p className="uppercase font-bold">{exerciseID.name}</p>
                         </Link>
-                        <button className="w-96 h-9 border-t-2 bg-white/80 mb-10 rounded-b-lg mt-1" onClick={() => deleteExercise(exerciseID)}>Delete exercise</button>
+                        <button className="w-80 h-9 bg-white/80 hover:bg-white/70 focus:bg-slate-200/60 mb-10 rounded-b-lg mt-1" onClick={() => deleteExercise(exerciseID)}>Delete exercise</button>
                     </div>
                 </>
             )):null
