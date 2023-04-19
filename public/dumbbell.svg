@@ -1,1 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M96 64c0-17.7 14.3-32 32-32h32c17.7 0 32 14.3 32 32V224v64V448c0 17.7-14.3 32-32 32H128c-17.7 0-32-14.3-32-32V384H64c-17.7 0-32-14.3-32-32V288c-17.7 0-32-14.3-32-32s14.3-32 32-32V160c0-17.7 14.3-32 32-32H96V64zm448 0v64h32c17.7 0 32 14.3 32 32v64c17.7 0 32 14.3 32 32s-14.3 32-32 32v64c0 17.7-14.3 32-32 32H544v64c0 17.7-14.3 32-32 32H480c-17.7 0-32-14.3-32-32V288 224 64c0-17.7 14.3-32 32-32h32c17.7 0 32 14.3 32 32zM416 224v64H224V224H416z"/></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 640 512" style="enable-background:new 0 0 640 512;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+</style>
+<path class="st0" d="M96,64c0-17.7,14.3-32,32-32h32c17.7,0,32,14.3,32,32v160v64v160c0,17.7-14.3,32-32,32h-32
+	c-17.7,0-32-14.3-32-32v-64H64c-17.7,0-32-14.3-32-32v-64c-17.7,0-32-14.3-32-32s14.3-32,32-32v-64c0-17.7,14.3-32,32-32h32V64z
+	 M544,64v64h32c17.7,0,32,14.3,32,32v64c17.7,0,32,14.3,32,32s-14.3,32-32,32v64c0,17.7-14.3,32-32,32h-32v64c0,17.7-14.3,32-32,32
+	h-32c-17.7,0-32-14.3-32-32V288v-64V64c0-17.7,14.3-32,32-32h32C529.7,32,544,46.3,544,64z M416,224v64H224v-64H416z"/>
+</svg>
