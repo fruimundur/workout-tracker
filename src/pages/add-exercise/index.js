@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 
 
-const apiKey = '1085|63aB9dCkx5xscui2Q6J32677rVKW0IbZXfWse7a2';
+const apiKey = process.env.API_Key;
 const apiUrl = `https://zylalabs.com/api/392/exercise+database+api/313/list+of+all+exercise`;
 
 /* fetching data from the API. The data is an array of objects, and each object 
