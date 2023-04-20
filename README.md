@@ -9,4 +9,4 @@ The project is built purely with Next.js and styled with Tailwind CSS. There is 
 The external data in the project is fetched from Zyla's Exercise Database API:
 https://zylalabs.com/api-marketplace/sports/exercise+database+api/392
 
-***April 18 2023: The functional part of the project is complete, although you might encounter a few little bugs that need to be taken care of. The UI design and responsiveness are still a work in progress.***
+***April 20 2023: The functional part of the project is complete, although you might encounter a few little bugs that need to be taken care of. The project is still a work in progress.***
