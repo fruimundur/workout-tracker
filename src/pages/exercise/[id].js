@@ -59,14 +59,16 @@ export default function ExercisePage() {
         <>
         <h1 className="text-center uppercase text-white text-2xl font-bold mt-10">{exerciseName}</h1>
         {/* <button type="button" onClick={() => router.back()}>Go back</button> */}
-        <Link href={`/gif/${exerciseID}`} className="w-40 h-12 mb-20 mt-8 mx-auto bg-white/80 hover:bg-white/70 focus:bg-slate-200/60 rounded font-bold text-center justify-center flex"><button>GIF</button></Link>
+        <Link href={`/gif/${exerciseID}`} className="w-40 h-12 mb-20 sm:mb-6 mt-8 mx-auto bg-white/80 hover:bg-white/70 focus:bg-slate-200/60 rounded font-bold text-center justify-center flex"><button>GIF</button></Link>
+        <div className="sm:grid sm:grid-cols-2 lg:mx-48 2xl:mx-96">
         {newSet.map(set => (
             <div key={set}>
                 <Set id={set} />
-                {set===0?null: <button onClick={() => deleteSet(set)} className="block w-80 mt-1 rounded-b-lg h-8 mx-auto bg-white/80 hover:bg-white/70 focus:bg-slate-200/60">Delete set</button>}
+                {set===0?null: <button onClick={() => deleteSet(set)} className="block w-72 md:w-80 mt-1 rounded-b-lg h-8 mx-auto bg-white/80 hover:bg-white/70 focus:bg-slate-200/60">Delete set</button>}
             </div>
         ))}
-        <button onClick={renderNewSet} className="block w-80 h-12 mt-20 mx-auto bg-white/80 hover:bg-white/70 focus:bg-slate-200/60 rounded font-bold">+ Add set</button>
+        </div>
+        <button onClick={renderNewSet} className="block w-72 md:w-80 h-12 mt-20 mx-auto bg-white/80 hover:bg-white/70 active:bg-slate-200/60 rounded font-bold">+ Add set</button>
         <Link href="/" className="w-40 h-12 mt-20 mx-auto bg-white/80 hover:bg-white/70 focus:bg-slate-200/60 rounded font-bold mb-10 text-center justify-center flex"><button onClick={saveExercise}>Save</button></Link>
         </>
     );

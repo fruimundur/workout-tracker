@@ -29,16 +29,17 @@ function deleteExercise(exerciseID) {
     return (
         <>
         {(savedArray)?
-            savedArray.map((exerciseID) => (
-                <>
-                    <div>
-                        <Link className="w-80 h-24 my-0 mx-auto flex items-center justify-center bg-white/80 hover:bg-white/70 focus:bg-slate-200/60 rounded-t-lg" key={exerciseID} href={`/exercise/${exerciseID.id}-${exerciseID.name}`}>
+            <div className="sm:grid sm:grid-cols-2 lg:grid-cols-3 2xl:mx-52">
+                {savedArray.map((exerciseID) => (                   
+                    <div key={exerciseID}>
+                        <Link className="w-72 h-24 my-0 mx-auto flex items-center justify-center bg-white/80 hover:bg-white/70 focus:bg-slate-200/60 rounded-t-lg xl:w-80 lg:h-32" href={`/exercise/${exerciseID.id}-${exerciseID.name}`}>
                             <p className="uppercase font-bold">{exerciseID.name}</p>
                         </Link>
-                        <button className="w-80 h-9 bg-white/80 hover:bg-white/70 focus:bg-slate-200/60 mb-10 rounded-b-lg mt-1" onClick={() => deleteExercise(exerciseID)}>Delete exercise</button>
+                        <button className="w-72 h-9 bg-white/80 hover:bg-white/70 focus:bg-slate-200/60 mb-10 rounded-b-lg mt-1 xl:w-80" onClick={() => deleteExercise(exerciseID)}>Delete exercise</button>
                     </div>
-                </>
-            )):null
+                ))}
+            </div>
+        :null
         }
         </>
     )

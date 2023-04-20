@@ -17,7 +17,7 @@ export default function Home() {
         </nav>
       </header>
       <main className="text-center">
-        <Link className="w-80 h-14 my-0 mx-auto mt-10 mb-10 bg-white/80 hover:bg-white/70 focus:bg-slate-200/60 rounded-md font-bold flex items-center justify-center" href="/add-exercise">
+        <Link className="w-72 h-14 my-0 mx-auto mt-10 sm:mt-20 mb-10 sm:mb-20 bg-white/80 hover:bg-white/70 focus:bg-slate-200/60 rounded-md font-bold flex items-center justify-center lg:w-80" href="/add-exercise">
           <p>
             + Add exercise
           </p>
