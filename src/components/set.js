@@ -26,7 +26,7 @@ updating the state of the 'reps' and 'kilos' variables, so these can be set as t
 
 /* This useEffect hook is triggered whenever the query parameter (in this case the ID of the exercise) and/or the 'id' 
 prop change. This happens whenever a new exercise page is opened or a new set is created. What the hook does is it updates 
-the state of the 'reps' and 'kilos' variables so that these values are displayed in the new set. */
+the state of the 'reps' and 'kilos' variables so that these values are displayed in their correct set. */
     useEffect(() => {
         const savedReps = localStorage.getItem(`${router.query.id}-${id}-reps`)
         if (savedReps) {
@@ -47,8 +47,8 @@ the state of the 'reps' and 'kilos' variables so that these values are displayed
                     <th className="border-b border-b-black" colSpan={2}>Set</th>
                 </tr>
                 <tr>
-                    <td className="border-r border-b border-black">Reps</td>
-                    <td className="border-b border-black">Kilos</td>
+                    <td className="border-r border-b border-black font-bold">Reps</td>
+                    <td className="border-b border-black font-bold">Kilos</td>
                 </tr>
                 <tr>
                     <td className="border-r border-black"><input className="border-none text-center w-32 rounded bg-white/0" onChange={handleChangeReps} value={reps}></input></td>

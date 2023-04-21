@@ -6,7 +6,7 @@ import Link from 'next/link.js';
 
 export default function ExercisePage() {
     const router = useRouter();
-    const [newSet, setNewSet] = useState([0])
+    const [newSet, setNewSet] = useState([])
 
     function renderNewSet() {
         setNewSet(prevSets => [...prevSets, prevSets.length])
@@ -17,7 +17,6 @@ export default function ExercisePage() {
     }, [router.query.id])
 
     useEffect(() => {
-        if (newSet.length < 2) return
         localStorage.setItem(`${router.query.id}-newSetList`, JSON.stringify(newSet))
     }, [newSet, router.query.id])
 
@@ -31,11 +30,17 @@ export default function ExercisePage() {
         localStorage.removeItem(`${router.query.id}-${i}-kilos`)
     }
 
+// Grabbing the name and ID of the exercise from the query paramater and storing them in separate variables
     const exerciseName = router.query.id ? router.query.id.slice(router.query.id.lastIndexOf('-') +1) : '';
     const exerciseID = router.query.id ? router.query.id.split('-')[0] : '';
 
+// Storing these newly declared variables as property values in an object
     const nameAndID = {name: exerciseName, id: exerciseID}
 
+/* This function stores the nameAndID object to an array in localStorage. These objects are then fetched from 
+localStorage on the front page in order to display all the exercises that have been saved. The function also
+checks via the loop wether the exercise has already been stored in localStorage, and if it has it returns from
+the function so the exercise doesn't get saved again (which would create a duplicate exercise on the front page) */
     function saveExercise() {
         let savedArray = localStorage.getItem("savedArray")
 
@@ -58,13 +63,12 @@ export default function ExercisePage() {
     return (
         <>
         <h1 className="text-center uppercase text-white text-2xl font-bold mt-10">{exerciseName}</h1>
-        {/* <button type="button" onClick={() => router.back()}>Go back</button> */}
-        <Link href={`/gif/${exerciseID}`} className="w-40 h-12 mb-20 sm:mb-6 mt-8 mx-auto bg-white/80 hover:bg-white/70 focus:bg-slate-200/60 rounded font-bold text-center justify-center flex"><button>GIF</button></Link>
+        <Link href={`/gif/${exerciseID}`} className="w-40 h-12 mb-20 sm:mb-6 mt-8 mx-auto bg-white/80 hover:bg-white/70 active:bg-slate-200/60 rounded font-bold text-center justify-center flex"><button>GIF</button></Link>
         <div className="sm:grid sm:grid-cols-2 lg:mx-48 2xl:mx-96">
         {newSet.map(set => (
             <div key={set}>
                 <Set id={set} />
-                {set===0?null: <button onClick={() => deleteSet(set)} className="block w-72 md:w-80 mt-1 rounded-b-lg h-8 mx-auto bg-white/80 hover:bg-white/70 focus:bg-slate-200/60">Delete set</button>}
+                {<button onClick={() => deleteSet(set)} className="block w-72 md:w-80 mt-1 rounded-b-lg h-8 mx-auto bg-white/80 hover:bg-white/70 focus:bg-slate-200/60">Delete set</button>}
             </div>
         ))}
         </div>
