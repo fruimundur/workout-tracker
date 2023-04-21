@@ -17,6 +17,7 @@ export default function ExercisePage() {
     }, [router.query.id])
 
     useEffect(() => {
+        if (!newSet.length) return
         localStorage.setItem(`${router.query.id}-newSetList`, JSON.stringify(newSet))
     }, [newSet, router.query.id])
 
