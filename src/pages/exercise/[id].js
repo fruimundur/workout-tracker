@@ -65,6 +65,7 @@ the function so the exercise doesn't get saved again (which would create a dupli
         <>
         <h1 className="text-center uppercase text-white text-2xl font-bold mt-10">{exerciseName}</h1>
         <Link href={`/gif/${exerciseID}`} className="w-40 h-12 mb-20 sm:mb-6 mt-8 mx-auto bg-white/80 hover:bg-white/70 active:bg-slate-200/60 rounded font-bold text-center justify-center flex"><button>GIF</button></Link>
+        <button onClick={renderNewSet} className="block w-72 md:w-80 h-12 mt-20 mx-auto bg-white/80 hover:bg-white/70 active:bg-slate-200/60 rounded font-bold">+ Add set</button>
         <div className="sm:grid sm:grid-cols-2 lg:mx-48 2xl:mx-96">
         {newSet?newSet.map(set => (
             <div key={set}>
@@ -73,7 +74,6 @@ the function so the exercise doesn't get saved again (which would create a dupli
             </div>
         )):null}
         </div>
-        <button onClick={renderNewSet} className="block w-72 md:w-80 h-12 mt-20 mx-auto bg-white/80 hover:bg-white/70 active:bg-slate-200/60 rounded font-bold">+ Add set</button>
         <Link href="/" className="w-40 h-12 mt-20 mx-auto bg-white/80 hover:bg-white/70 focus:bg-slate-200/60 rounded font-bold mb-10 text-center justify-center flex"><button onClick={saveExercise}>Save</button></Link>
         </>
     );
