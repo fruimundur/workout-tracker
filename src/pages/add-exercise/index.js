@@ -8,7 +8,7 @@ const apiUrl = `https://zylalabs.com/api/392/exercise+database+api/313/list+of+a
 /* fetching data from the API. The data is an array of objects, and each object 
 is an exercise with different properites describing that exercise/object */
 export async function getStaticProps() {
-    const response = await fetch(apiUrl, {
+  const response = await fetch(apiUrl, {
         headers: {
           Authorization: `Bearer ${apiKey}`,
         },
@@ -42,7 +42,7 @@ can be utilised to match the name property of the exercises with the value of th
         <input className="w-80 sm:w-96 h-10 rounded-md indent-2" type="text" value={searchQuery} placeholder="Search name of exercise" onChange={handleChange} />
       </form>
       {searchQuery !== '' && (
-        <ul className="bg-white w-80 sm:w-96 h-72 sm:h-96 overflow-scroll rounded-md indent-1.5">
+        <ul className="bg-white w-80 sm:w-96 h-72 sm:max-h-96 overflow-scroll rounded-md indent-1.5">
           {filteredData.map((item) => (
             <Link key={item.id} href={`/exercise/${item.id}-${item.name}`}><li>{item.name.toUpperCase()}</li></Link>
           ))}
